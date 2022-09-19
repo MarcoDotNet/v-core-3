@@ -8,8 +8,6 @@ G91                     ; Relative positioning
 G1 H2 Z5 F6000          ; Lift Z relative to current position
 G1 H1 X-625 Y605 F1800  ; Move quickly to X and Y axis endstops and stop there (first pass)
 
-
-
 G1 X3 Y-3 F600          ; Go back a few mm
 
 G1 H1 X-625 Y605 F360   ; Move slowly to X and Y axis endstops once more (second pass)
@@ -24,6 +22,6 @@ G1 X200 Y200 F10000    ; Go to the center of the bed (400x400)
 ;G1 X250 Y250 F10000    ; Go to the center of the bed (500x500)
 G30                     ; Home Z by probing the bed
 
-G91                     ; Relative positioning
-G1 Z5 F100              ; Lift Z relative to current position
-G90                     ; Absolute positioning
+;G91                     ; Relative positioning
+;G1 H2 Z20 F100              ; Lift Z relative to current position
+;G90                     ; Absolute positioning

@@ -12,6 +12,6 @@ G1 X200 Y200 F10000    ; Go to the center of the bed (400x400)
 G30                     ; Home Z by probing the bed
 
 ; Uncomment the following lines to lift Z after probing
-G91                     ; Relative positioning
-G1 Z5 F100              ; Lift Z relative to current position
-G90                     ; Absolute positioning
+;G91                     ; Relative positioning
+;G1 Z5 F100              ; Lift Z relative to current position
+;G90                     ; Absolute positioning

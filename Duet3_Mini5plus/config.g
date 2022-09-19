@@ -44,7 +44,7 @@ M208 X410 Y400 Z400 S0                         ; set axis maxima
 M574 X1 S1 P"io1.in"                           ; configure active high endstops
 M574 Y2 S1 P"io0.in"                           ; configure active high endstops
 
-M671 X-4.5:150:304.5 Y-4.52:305:-4.52 S5       ; define positions of Z leadscrews or bed levelling screws
+M671 X-4.5:200:404.5 Y-4.52:405:-4.52 S5       ; define positions of Z leadscrews or bed levelling screws
 M557 X20:280 Y20:280 P5                        ; define 5x5 mesh grid
 
 ; Heaters
@@ -97,4 +97,4 @@ T0
 ; M572 D0 S0.10
 
 
-M564 H0
+;M564 H0
