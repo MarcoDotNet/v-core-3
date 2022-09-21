@@ -69,6 +69,10 @@ M563 P0 D0 H1 F0           ; define tool 0
 G10 P0 X0 Y0 Z0            ; set tool 0 axis offsets
 G10 P0 R0 S0               ; set initial tool 0 active and standby temperatures to 0C
 
+M308 S1 P"temp1" Y"thermistor" T100000 B4725 A"Hotend"
+;; Run Heater PID Tune!! 
+;; M307 H1 A751.5 C196.6 D4.7 S1.00 V23.9 B0
+
 M950 H1 C"out1" T1         ; create nozzle heater output on out2 and map it to sensor 1
 M307 H1 B0 S1.00           ; disable bang-bang mode for heater and set PWM limit
 M143 H1 S250               ; set the maximum temperature in C for heater
@@ -77,10 +81,6 @@ M143 H1 S250               ; set the maximum temperature in C for heater
 
 M92 E830          ; set extruder steps per mm, 0.9 angle/step (LDO Pancake)
 M906 E800         ; set extruder motor current (mA) and idle factor in per cent
-
-M308 S1 P"temp1" Y"thermistor" T100000 B4725 C7.060000e-8 A"Hotend"  
-;; Run Heater PID Tune!! 
-;; M307 H1 A751.5 C196.6 D4.7 S1.00 V23.9 B0
 
 ; Z-Probe
 ;; Inductive Probe
