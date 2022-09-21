@@ -45,7 +45,7 @@ M574 X1 S1 P"io1.in"                           ; configure active high endstops
 M574 Y2 S1 P"io0.in"                           ; configure active high endstops
 
 M671 X-4.5:200:404.5 Y-4.52:405:-4.52 S5       ; define positions of Z leadscrews or bed levelling screws
-M557 X20:280 Y20:280 P5                        ; define 5x5 mesh grid
+M557 X20:371 Y20:371 P5                        ; define 5x5 mesh grid
 
 ; Heaters
 M308 S0 P"temp0" Y"thermistor" T100000 B3950 A"Bed"    ; configure sensor 0 as thermistor on pin temp0
@@ -53,6 +53,7 @@ M950 H0 C"out0" T0 Q11                                 ; create bed heater outpu
 M307 H0 B0 S1.00                                       ; disable bang-bang mode for the bed heater and set PWM limit
 M140 H0                                                ; map heated bed to heater 0
 M143 H0 S110                                           ; set temperature limit for heater 0 to 110C
+M307 H0 R0.537 K0.367:0.000 D5.37 E1.35 S1.00 B0
 
 ;; Run Bed PID Tune!! Below is an example for a 300x300 bed
 ;; M307 H0 A303.1 C356.7 D1.4 S1.00 V24.0 B0
@@ -95,6 +96,5 @@ T0
 
 ; Pressure Advance
 ; M572 D0 S0.10
-
 
 ;M564 H0
