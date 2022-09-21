@@ -50,17 +50,16 @@ M557 X20:371 Y20:371 P5                        ; define 5x5 mesh grid
 ; Heaters
 M308 S0 P"temp0" Y"thermistor" T100000 B3950 A"Bed"    ; configure sensor 0 as thermistor on pin temp0
 M950 H0 C"out0" T0 Q11                                 ; create bed heater output on out5 and map it to sensor 0, lower switching frequency to 11Hz
-M307 H0 B0 S1.00                                       ; disable bang-bang mode for the bed heater and set PWM limit
+M307 H0 R0.537 K0.367:0.000 D5.37 E1.35 S1.00 B0       ; disable bang-bang mode for the bed heater and set PWM limit
 M140 H0                                                ; map heated bed to heater 0
 M143 H0 S110                                           ; set temperature limit for heater 0 to 110C
-M307 H0 R0.537 K0.367:0.000 D5.37 E1.35 S1.00 B0
 
 ;; Run Bed PID Tune!! Below is an example for a 300x300 bed
 ;; M307 H0 A303.1 C356.7 D1.4 S1.00 V24.0 B0
 
 ; Fans
-M950 F0 C"out4" Q500                   ; create fan 0 on pin out4 and set its frequency
-M106 P0 C"Layer Fan" S0 H-1            ; set fan 0 name and value. Thermostatic control is turned off
+M950 F0 C"out4" Q100                   ; create fan 0 on pin out4 and set its frequency
+M106 P0 C"Layer Fan" L1.0 X1.0 S0 H-1  ; set fan 0 name and value. Thermostatic control is turned off
 M950 F1 C"out3" Q500                   ; create fan 1 on pin out3 and set its frequency
 M106 P1 C"Hotend Fan" S0 H1 T45        ; set fan 1 name and value. Thermostatic control turned on for Hotend
 
@@ -73,9 +72,10 @@ M308 S1 P"temp1" Y"thermistor" T100000 B4725 A"Hotend"
 ;; Run Heater PID Tune!! 
 ;; M307 H1 A751.5 C196.6 D4.7 S1.00 V23.9 B0
 
-M950 H1 C"out1" T1         ; create nozzle heater output on out2 and map it to sensor 1
-M307 H1 B0 S1.00           ; disable bang-bang mode for heater and set PWM limit
-M143 H1 S250               ; set the maximum temperature in C for heater
+M950 H1 C"out1" T1                                         ; create nozzle heater output on out1 and map it to sensor 1
+M307 H1 R4.076 K1.037:0.495 D5.00 E1.35 S1.00 B0 V24.2     ; disable bang-bang mode for heater and set PWM limit
+M143 H1 S250                                               ; set the maximum temperature in C for heater
+
 
 ; EVA 2 / BMG / E3D V6
 
