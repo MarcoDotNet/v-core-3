@@ -79,7 +79,7 @@ M143 H1 S250                                               ; set the maximum tem
 
 ; EVA 2 / BMG / E3D V6
 
-M92 E830          ; set extruder steps per mm, 0.9 angle/step (LDO Pancake)
+M92 E409         ; set extruder steps per mm, 0.9 angle/step (LDO Pancake)
 M906 E600         ; set extruder motor current (mA) and idle factor in per cent
 
 ; Z-Probe
