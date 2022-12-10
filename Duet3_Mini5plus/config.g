@@ -74,7 +74,7 @@ M308 S1 P"temp1" Y"thermistor" T100000 B4725 A"Hotend"
 
 M950 H1 C"out1" T1                                         ; create nozzle heater output on out1 and map it to sensor 1
 M307 H1 R4.076 K1.037:0.495 D5.00 E1.35 S1.00 B0 V24.2     ; disable bang-bang mode for heater and set PWM limit
-M143 H1 S250                                               ; set the maximum temperature in C for heater
+M143 H1 S260                                               ; set the maximum temperature in C for heater
 
 
 ; EVA 2 / BMG / E3D V6
